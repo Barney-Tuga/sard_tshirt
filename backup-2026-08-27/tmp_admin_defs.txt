@@ -1,0 +1,121 @@
+        <button class="chip" data-filter="pendente-pagamento">Por pagar</button>
+        <button class="chip" data-filter="pendente-entrega">Por entregar</button>
+        <button class="chip" data-filter="concluido">Concluídos</button>
+      </div>
+    </div>
+    <div id="orders-list" class="cards-list"></div>
+    <p class="empty-msg" id="orders-empty" hidden>Nenhum pedido encontrado.</p>
+  </section>
+
+  <!-- ===================== DEFINIÇÕES ===================== -->
+  <section id="view-defs" class="view">
+    <div class="settings-block">
+      <h2>Clubes / Seleções</h2>
+      <p class="hint">Gere a lista de clubes e seleções disponíveis ao criar um pedido.</p>
+      <div class="add-inline">
+        <input type="text" id="new-club-input" placeholder="Nome do clube ou seleção">
+        <button class="btn-secondary" id="btn-add-club">Adicionar</button>
+      </div>
+      <ul id="clubs-list" class="tags-list"></ul>
+    </div>
+
+    <div class="settings-block">
+      <h2>Tamanhos</h2>
+      <p class="hint">Gere a lista de tamanhos disponíveis ao criar um pedido.</p>
+      <div class="add-inline">
+        <input type="text" id="new-size-input" placeholder="Novo tamanho">
+        <button class="btn-secondary" id="btn-add-size">Adicionar</button>
+      </div>
+      <ul id="sizes-list" class="tags-list"></ul>
+    </div>
+
+    <div class="settings-block">
+      <h2>Tipos de equipamento</h2>
+      <p class="hint">Gere os tipos de equipamento disponíveis ao criar um pedido.</p>
+      <div class="add-inline">
+        <input type="text" id="new-equipment-input" placeholder="Novo tipo de equipamento">
+        <button class="btn-secondary" id="btn-add-equipment">Adicionar</button>
+      </div>
+      <ul id="equipment-list" class="tags-list"></ul>
+    </div>
+
+    <div class="settings-block">
+      <h2>Preços base</h2>
+      <p class="hint">Preço de compra de cada artigo, usado para calcular o lucro.</p>
+      <div class="price-grid">
+        <label>T-shirt
+          <input type="number" min="0" step="0.5" id="price-tshirt">
+        </label>
+        <label>Camisola
+          <input type="number" min="0" step="0.5" id="price-camisola">
+        </label>
+        <label>Kit
+          <input type="number" min="0" step="0.5" id="price-kit">
+        </label>
+        <label>Extra por customização
+          <input type="number" min="0" step="0.5" id="price-custom">
+        </label>
+        <label>Patch
+          <input type="number" min="0" step="0.5" id="price-patch">
+        </label>
+        <label>Especial / Versão Jogador / Retro
+          <input type="number" min="0" step="0.5" id="price-special">
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <h2>Preços de venda</h2>
+      <p class="hint">Preço cobrado ao cliente. Podes sempre ajustá-lo no pedido.</p>
+      <div class="price-grid">
+        <label>T-shirt
+          <input type="number" min="0" step="0.5" id="sale-price-tshirt">
+        </label>
+        <label>Camisola
+          <input type="number" min="0" step="0.5" id="sale-price-camisola">
+        </label>
+        <label>Kit
+          <input type="number" min="0" step="0.5" id="sale-price-kit">
+        </label>
+        <label>Extra por customização
+          <input type="number" min="0" step="0.5" id="sale-price-custom">
+        </label>
+        <label>Patch
+          <input type="number" min="0" step="0.5" id="sale-price-patch">
+        </label>
+        <label>Especial / Versão Jogador / Retro
+          <input type="number" min="0" step="0.5" id="sale-price-special">
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <h2>Dados</h2>
+      <p class="hint">Faz uma cópia de segurança dos teus pedidos ou restaura a partir de um ficheiro.</p>
+      <div class="data-actions">
+        <button class="btn-secondary" id="btn-export">Exportar backup</button>
+        <button class="btn-secondary" id="btn-import">Importar backup</button>
+        <input type="file" id="import-file" accept="application/json" hidden>
+        <button class="btn-danger" id="btn-clear-all">Apagar tudo</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-view="home">
+    <span class="nav-icon">🏠</span><span>Início</span>
+  </button>
+  <button class="nav-item" data-view="lista">
+    <span class="nav-icon">📋</span><span>Lista</span>
+  </button>
+  <button class="nav-item" data-view="defs">
+    <span class="nav-icon">⚙️</span><span>Definições</span>
+  </button>
+</nav>
+
+<!-- ===================== MODAL: FORM PEDIDO ===================== -->
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">

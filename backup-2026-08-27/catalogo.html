@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo SARD de camisolas e kits de futebol 2026/27.">
+  <title>Catálogo 26/27 | SARD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="store.css">
+</head>
+<body class="catalog-page">
+  <div class="announcement">COLEÇÃO 2026/27 <span>///</span> CAMISOLAS, KITS E PEÇAS ESPECIAIS</div>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="SARD, início">SARD<span>_</span></a>
+    <nav class="desktop-nav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="#catalogo">Catálogo</a><a href="index.html#retro">Retro</a></nav>
+    <button class="cart-button" id="open-cart" type="button">CARRINHO <span id="cart-count">0</span></button>
+  </header>
+
+  <main id="catalogo">
+    <section class="catalog-hero">
+      <p class="eyebrow">COLEÇÃO SARD / 2026-2027</p>
+      <h1>O TEU<br>CAMPEONATO.</h1>
+      <p>Uma seleção completa para a nova época: camisolas, versões alternativas, especiais e kits para criança.</p>
+      <div class="catalog-count"><strong id="catalog-count">0</strong> PEÇAS DISPONÍVEIS</div>
+    </section>
+    <section class="catalog-content">
+      <aside class="catalog-sidebar">
+        <p class="eyebrow">FILTRAR POR</p>
+        <div class="catalog-filters" id="catalog-filters">
+          <button class="catalog-filter active" data-filter="Todos" type="button">Tudo</button>
+          <button class="catalog-filter" data-filter="Portugal" type="button">Portugal</button>
+          <button class="catalog-filter" data-filter="Europa" type="button">Europa</button>
+          <button class="catalog-filter" data-filter="Seleções" type="button">Seleções</button>
+          <button class="catalog-filter" data-filter="Criança" type="button">Kits criança</button>
+          <button class="catalog-filter" data-filter="Especial" type="button">Edições especiais</button>
+        </div>
+      </aside>
+      <section class="catalog-listing" aria-live="polite">
+        <div class="catalog-toolbar"><p id="catalog-result">A mostrar todos os produtos</p><label>Ordenar<select id="catalog-sort"><option value="featured">Destaques</option><option value="low">Preço: menor primeiro</option><option value="high">Preço: maior primeiro</option></select></label></div>
+        <div class="product-grid catalog-grid" id="catalog-grid"></div>
+      </section>
+    </section>
+  </main>
+  <footer><a class="wordmark" href="index.html">SARD<span>_</span></a><p>FUTEBOL PARA VESTIR. PORTUGAL, 2026.</p><a href="admin.html">ÁREA DE GESTÃO</a></footer>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true"><div class="drawer-header"><h2 id="cart-title">O TEU CARRINHO</h2><button class="icon-button" id="close-cart" type="button" aria-label="Fechar carrinho">x</button></div><div class="cart-items" id="cart-items"></div><div class="cart-summary"><div><span>Subtotal</span><strong id="cart-total">0,00 EUR</strong></div><button class="button button-dark" id="checkout-button" type="button">FINALIZAR PEDIDO <span>-&gt;</span></button></div></aside>
+  <div class="overlay" id="overlay" hidden></div>
+  <dialog class="checkout-dialog product-dialog" id="product-dialog"><button class="icon-button dialog-close" id="close-product" type="button" aria-label="Fechar">x</button><p class="eyebrow">CONFIGURA A TUA PEÇA</p><h2 id="product-dialog-title">ESCOLHE<br>O TAMANHO</h2><form id="product-form"><label>Tamanho<select id="product-size" required><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option><option>2-3</option><option>4-5</option><option>6-7</option><option>8-9</option><option>10-11</option><option>12-13</option><option>14-15</option></select></label><label class="custom-check"><input type="checkbox" id="product-custom"> Adicionar nome e número</label><div id="product-custom-fields" hidden><label>Nome<input id="product-custom-name" maxlength="14" placeholder="EX: RONALDO"></label><label>Número<input id="product-custom-number" inputmode="numeric" maxlength="3" placeholder="EX: 7"></label></div><button class="button button-dark" type="submit">ADICIONAR AO CARRINHO <span>-&gt;</span></button></form></dialog>
+  <dialog class="checkout-dialog" id="checkout-dialog"><button class="icon-button dialog-close" id="close-checkout" type="button" aria-label="Fechar">x</button><p class="eyebrow">QUASE LÁ</p><h2>DETALHES<br>DO PEDIDO</h2><form id="checkout-form"><label>Nome completo<input id="customer-name" required autocomplete="name"></label><label>Telemóvel<input id="customer-phone" required inputmode="tel" autocomplete="tel" placeholder="9xx xxx xxx"></label><label>Notas para o pedido<textarea id="customer-note" rows="2" placeholder="Ex: entrega a partir das 18h"></textarea></label><button class="button button-dark" type="submit">ENVIAR PEDIDO <span>-&gt;</span></button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="catalogo.js"></script>
+</body>
+</html>
